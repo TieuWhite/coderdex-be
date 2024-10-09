@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-
+app.use("/Pokemon/image", express.static("./Pokemon/image"));
 app.get("/pokemons", (req, res) => {
   const { type, search } = req.query;
 

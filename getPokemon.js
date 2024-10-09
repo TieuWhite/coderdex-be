@@ -1,17 +1,16 @@
 const fs = require("fs");
 const csv = require("csvtojson");
-const { url } = require("inspector");
 
 const getPokemon = async () => {
   try {
     const pokemonData = await csv().fromFile("pokemon.csv");
     const results = pokemonData
       .map((data, index) => {
-        const ImageURL = `http://localhost:3000/images/pokemon/${
+        const ImageURL = `http://localhost:5000/Pokemon/images/${
           index + 1
         }.png`;
 
-        const imagePath = `./public/images/pokemon/${index + 1}.png`;
+        const imagePath = `./Pokemon/images/${index + 1}.png`;
 
         if (!fs.existsSync(imagePath)) {
           return null;
