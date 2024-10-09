@@ -6,7 +6,7 @@ const getPokemon = async () => {
     const pokemonData = await csv().fromFile("pokemon.csv");
     const results = pokemonData
       .map((data, index) => {
-        const ImageURL = `http://localhost:5000/Pokemon/images/${
+        const ImageURL = `https://coderdex-be-ame9.onrender.com/Pokemon/images/${
           index + 1
         }.png`;
 
