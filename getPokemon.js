@@ -6,11 +6,11 @@ const getPokemon = async () => {
     const pokemonData = await csv().fromFile("pokemon.csv");
     const results = pokemonData
       .map((data, index) => {
-        const ImageURL = `https://coderdex-be-ame9.onrender.com/public/images/${
+        const ImageURL = `https://coderdex-be-ame9.onrender.com/images/${
           index + 1
         }.png`;
 
-        const imagePath = `./public/images/${index + 1}.png`;
+        const imagePath = `./images/${index + 1}.png`;
 
         if (!fs.existsSync(imagePath)) {
           return null;
